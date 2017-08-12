@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'Controller@index');
+
+Route::get('hello', function (){
+    dd(env('DB_DATABASE'));
+    dd(ini_get('date.timezone'));
 });
+
+Auth::routes();
+
+//Route::get('/', 'HomeController@index')->name('home');
