@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //注册一个provider后在config/auth.php providers['users']['driver']中绑定
+        \Auth::provider('simple-eloquent', function ($app, $config){
+           return new SimpleEloquentUserProvider($this->app['hash'], $config['model']);
+        });
     }
 }
