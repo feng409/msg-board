@@ -176,8 +176,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
+        //IDE_helper 服务
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        //sql语句打印
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
     ],
 
     /*

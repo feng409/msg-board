@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('hello', function (){
-    dd(env('DB_DATABASE'));
-    dd(ini_get('date.timezone'));
-});
+Route::get('test', 'Controller@test');
 
 //调用Illuminate/Routing/Router类的auth方法
 //Auth::routes();

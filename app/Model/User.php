@@ -10,6 +10,11 @@ class User extends Model implements Authenticatable
     //
     protected $primaryKey = 'user_id';
 
+    /**
+     * 可以被批量赋值的属性
+    */
+    protected $fillable = ['user_name', 'user_passwd'];
+
     public function comments(){
         return $this->hasMany(
             'App\Model\Comment',
@@ -24,7 +29,6 @@ class User extends Model implements Authenticatable
      */
     public function getAuthIdentifierName()
     {
-        // TODO: Implement getAuthIdentifierName() method.
         return 'user_id';
     }
 
@@ -35,7 +39,6 @@ class User extends Model implements Authenticatable
      */
     public function getAuthIdentifier()
     {
-        // TODO: Implement getAuthIdentifier() method.
         return $this->user_id;
     }
 
@@ -46,7 +49,6 @@ class User extends Model implements Authenticatable
      */
     public function getAuthPassword()
     {
-        // TODO: Implement getAuthPassword() method.
         return $this->user_passwd;
     }
 
@@ -57,7 +59,6 @@ class User extends Model implements Authenticatable
      */
     public function getRememberToken()
     {
-        // TODO: Implement getRememberToken() method.
         return $this->remember_token;
     }
 
@@ -69,7 +70,6 @@ class User extends Model implements Authenticatable
      */
     public function setRememberToken($value)
     {
-        // TODO: Implement setRememberToken() method.
         $this->remember_token = $value;
 
     }
@@ -81,7 +81,6 @@ class User extends Model implements Authenticatable
      */
     public function getRememberTokenName()
     {
-        // TODO: Implement getRememberTokenName() method.
         return 'remember_token';
     }
 }

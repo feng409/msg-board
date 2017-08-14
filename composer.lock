@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9cce1f0ba0ea7c3e7e67205a2357797",
+    "content-hash": "8b629c694ddf8b74d2bcd6d4177701a1",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -269,6 +269,51 @@
                 "parser"
             ],
             "time": "2017-05-14T14:47:48+00:00"
+        },
+        {
+            "name": "itsgoingd/clockwork",
+            "version": "v1.14.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itsgoingd/clockwork.git",
+                "reference": "7117bca9b778b121f4e562c9653037c07ff95d68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/itsgoingd/clockwork/7117bca9b778b121f4e562c9653037c07ff95d68.zip",
+                "reference": "7117bca9b778b121f4e562c9653037c07ff95d68",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "psr/log": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clockwork\\": "Clockwork/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itsgoingd",
+                    "email": "itsgoingd@luzer.sk",
+                    "homepage": "http://twitter.com/itsgoingd"
+                }
+            ],
+            "description": "Server-side component of Clockwork, a Chrome extension for PHP development",
+            "homepage": "http://github.com/itsgoingd/clockwork",
+            "keywords": [
+                "debugging",
+                "laravel",
+                "logging",
+                "profiling"
+            ],
+            "time": "2017-05-31T20:09:12+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
