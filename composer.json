@@ -9,7 +9,8 @@
         "barryvdh/laravel-ide-helper": "^2.4",
         "itsgoingd/clockwork": "^1.14",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "overtrue/laravel-lang": "~3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
