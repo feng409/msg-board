@@ -14,6 +14,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function test(){
-        echo User::find(1)->comments[0]->comment;
+        print \Emoji::toImage(':smile:');
     }
 }

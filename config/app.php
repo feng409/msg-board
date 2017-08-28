@@ -185,6 +185,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         //sql语句打印
         Clockwork\Support\Laravel\ClockworkServiceProvider::class,
+        //Emoji表情
+        Overtrue\LaravelEmoji\EmojiServiceProvider::class,
     ],
 
     /*
@@ -234,6 +236,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Emoji' => Overtrue\LaravelEmoji\Emoji::class,
     ],
 
 ];
