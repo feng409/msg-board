@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form class="form" action="" id="comment">
+        <form class="form" method="post" action="{{ route('comment.store') }}" id="comment" >
             @if(Auth::guest())
                 <div class="form-group">
                     <label for="comment">请登录后留言</label>
@@ -10,7 +10,7 @@
                 </textarea>
                 </div>
                 <div class="form-group text-right">
-                    <input type="button" disabled class="btn-info btn" value="登录后发言"/>
+                    <input type="submit" disabled class="btn-info btn" value="登录后发言"/>
                 </div>
             @else
                 <div class="form-group">
@@ -18,8 +18,9 @@
                     <textarea class="form-control comment_content" name="comment" rows="5">
                 </textarea>
                 </div>
+                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <div class="form-group text-right">
-                    <input type="button" class="btn-info btn" value="留言"/>
+                    <input type="submit" class="btn-info btn" value="留言"/>
                 </div>
             @endif
         </form>

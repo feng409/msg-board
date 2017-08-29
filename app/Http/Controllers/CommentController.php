@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Comment;
+use Illuminate\Support\Facades\Log;
 
 class CommentController extends Controller
 {
@@ -38,6 +39,15 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new Comment();
+        Log::info("store");
+        $model->comment = htmlspecialchars($request->get('comment'));
+        $model->user_id = $request->user()->user_id;
+        if ($model->save()){
+            return redirect("/");
+        }else{
+            Log::alert("存储失败");
+        }
     }
 
     /**
