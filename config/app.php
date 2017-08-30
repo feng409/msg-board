@@ -187,6 +187,8 @@ return [
         Clockwork\Support\Laravel\ClockworkServiceProvider::class,
         //Emoji表情
         Overtrue\LaravelEmoji\EmojiServiceProvider::class,
+        //markdown服务提供者
+        App\Providers\MarkdownServiceProvider::class,
     ],
 
     /*

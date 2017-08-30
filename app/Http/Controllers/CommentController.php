@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Util\Markdown;
 use Illuminate\Http\Request;
 use App\Model\Comment;
 use Illuminate\Support\Facades\Log;
 
 class CommentController extends Controller
 {
+    private $markdown;
+
+    /**
+     * CommentController constructor.
+     * @param $markdown
+     */
+    public function __construct(Markdown $markdown)
+    {
+        $this->markdown = $markdown;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +28,7 @@ class CommentController extends Controller
     public function index()
     {
         //
-        $comments = Comment::paginate(10);
+        $comments = Comment::paginate(6);
         return view('comments', ['comments' => $comments]);
     }
 
@@ -41,7 +53,7 @@ class CommentController extends Controller
         //
         $model = new Comment();
         Log::info("store");
-        $model->comment = htmlspecialchars($request->get('comment'));
+        $model->comment = $this->markdown->markdownToHTML($request->get('comment'));
         $model->user_id = $request->user()->user_id;
         if ($model->save()){
             return redirect("/");
