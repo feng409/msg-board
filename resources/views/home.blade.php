@@ -19,11 +19,17 @@
                 </textarea>
                 </div>
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                <div class="form-group " style="float: left">
+                    <a class="hint label-warning hover" target="_blank" href="https://laravel-china.org/ecc/index.html">emoji表情请参考这里</a>
+                </div>
+                <div class="form-group float-right" style="float: right">
+                        <input type="submit" class="btn-info btn" value="留言"/>
+                </div>
                 <div class="form-group text-right">
-                    <input type="submit" class="btn-info btn" value="留言"/>
                 </div>
             @endif
         </form>
+        <div class="clear"></div>
         <div id="comments">
             尚未加载好
         </div>

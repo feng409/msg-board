@@ -1,3 +1,16 @@
 .comment_content{
     resize: none;
 }
+.half_width{
+    width: 50%;
+}
+.clear{
+    clear: both;
+}
+a:hover,a:active,a:visited,a:focus{
+    text-decoration: none;
+}
+.hint{
+    color: white;
+    font-size: 18px;
+}

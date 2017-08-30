@@ -28,7 +28,7 @@ class CommentController extends Controller
     public function index()
     {
         //
-        $comments = Comment::paginate(6);
+        $comments = Comment::orderBy('created_at', 'desc')->paginate(6);
         return view('comments', ['comments' => $comments]);
     }
 
@@ -53,7 +53,7 @@ class CommentController extends Controller
         //
         $model = new Comment();
         Log::info("store");
-        $model->comment = $this->markdown->markdownToHTML($request->get('comment'));
+        $model->comment = $this->markdown->markdownToHTML(trim($request->get('comment')));
         $model->user_id = $request->user()->user_id;
         if ($model->save()){
             return redirect("/");

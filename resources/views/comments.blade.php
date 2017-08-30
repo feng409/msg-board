@@ -9,7 +9,14 @@
 @endforeach
 <!--分页-->
 {{--<div class="page-split text-right">--}}
-    {{--<ul class="pagination">--}}
-{{--        {{ $comments->links() }}--}}
-    {{--</ul>--}}
+        {{ $comments->links() }}
 {{--</div>--}}
+<script >
+    $(".pagination li a").click(function () {
+        var url = $(this).attr('action');
+        console.log('url ' + url);
+        $.get(url, function (data) {
+            $("#comments").html(data);
+        })
+    });
+</script>
