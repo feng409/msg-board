@@ -7,10 +7,48 @@
 .clear{
     clear: both;
 }
-a:hover,a:active,a:visited,a:focus{
-    text-decoration: none;
-}
+
 .hint{
-    color: white;
+    /*color: white;*/
     font-size: 18px;
 }
+
+.comment{
+    margin: 15px;
+    padding: 10px;
+}
+
+.comment-text{
+    margin: 15px;
+    text-indent: 2em;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.clear{
+    display: block;
+    clear: both;
+    content: "";
+}
+
+a:hover {
+    text-decoration: none;
+    /*color: white;*/
+}
+
+a:active{
+    text-decoration: none;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+

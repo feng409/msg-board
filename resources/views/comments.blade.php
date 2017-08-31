@@ -1,10 +1,12 @@
 {{--@extends('layouts.app')--}}
 {{----}}
 @foreach($comments as $comment)
-    <div class="row">
-        <div class="col-md-3">{{$comment->user->user_name}}</div>
-        <div class="col-md-6">{!! $comment->comment !!}</div>
-        <div class="col-md-3">{{$comment->updated_at}}</div>
+    <div class="comment">
+        <div class="float-left "><img class="icon" src="{{ asset('img/huaji.png') }}"> </div>
+        <div class="float-left">{{$comment->user->user_name}}</div>
+        <div class="float-right">{{$comment->updated_at}}</div>
+        <div class="clearfix"></div>
+        <div class="comment-text">{!! $comment->comment !!}</div>
     </div>
 @endforeach
 <!--分页-->
