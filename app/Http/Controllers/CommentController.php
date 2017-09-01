@@ -53,7 +53,10 @@ class CommentController extends Controller
         //
         $model = new Comment();
         Log::info("store");
-        $model->comment = $this->markdown->markdownToHTML(trim($request->get('comment')));
+        $model->comment = $this->markdown
+            ->markdownToHTML(
+                htmlspecialchars(trim($request->get('comment'), ENT_QUOTES)
+                ));
         $model->user_id = $request->user()->user_id;
         if ($model->save()){
             return redirect("/");
