@@ -1,10 +1,22 @@
-#### 留言板
-~~练手项目，先挖坑放上来，防止懒惰症~~
-##### 实现目标
-- 登录注册 √
-- 未登录不能评论 √
-- 登录后120分钟内免再次登录 √
-- ~~界面好看~~
-- 分页ajax刷新
-- 评论内容支持Markdown语法解析 √
-- 支持emoji表情包 √
+# laravel搭建的留言板项目
+
+## 介绍
+- session认证登录
+- 留言支持emoji表情
+- 留言支持markdown语法
+
+## 安装方法:
+```shell
+git clone https://github.com/feng409/msg-board.git
+cd msg-board
+composer install
+npm install
+cp .env.example .env
+vim .env # 修改env配置中的数据库连接
+php artisan serve # 运行程序
+```
+
+## TODO
+- 增加用户头像设置
+- 登录注册验证码功能
+
