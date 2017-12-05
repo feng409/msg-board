@@ -18,15 +18,17 @@ vim .env # 修改env配置中的数据库连接
 php artisan serve # 运行程序
 ```
 
-## Docker Compose 安装
+## 使用 **[laradock](https://github.com/laradock/laradock)** 项目 配置 **docker** 环境
 ---
-关于怎么安装和使用 **docker** 以及 **docker-compose** 这里就不介绍了  
-PS: 被服务器环境配置搞烦了,用上 **docker** 神器: 
->一次配置,导出运行
+
 ```bash
-cp .env.example .env
-sudo docker-compose up -d
-sudo docker exec msgboard_php-fpm_1 composer install && php artisan migrate:refresh # 数据库迁移
+vim .env
+DB_HOST=mysql
+
+cd laradock
+cp env-example .env
+sudo docker-compose up -d nginx mysql # 启动容器
+sudo docker exec workspace composer install && php artisan migrate:refresh # 数据库迁移
 ```
 ## TODO
 - 增加用户头像设置
